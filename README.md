@@ -3,7 +3,7 @@ This repo is for CSV file upload functionality, and  view the CSV data with sort
 
 To setup on local:
 
-- Run using Docker **Docker stup required**
+- Run using Docker **(Docker stup required)**
 - Running Client and Server Applications
 
 **To run bby using Docker:**
