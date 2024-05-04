@@ -36,8 +36,8 @@ Requirements:
  Steps to run Angular Client App:
 
   ```
-    - git clone  https://github.com/vjr2817/CSV-Uploader.git
-    - cd CSV-Uploader/client
+    - git clone https://github.com/vjr2817/csv-uploader.git
+    - cd csv-uploader/client
     - npm install
     - ng serve
   ```
@@ -47,8 +47,8 @@ App will be running on http://localhost:4200 (**use admin & admin as username an
 Steps to run Symfony PHP app:
 
   ```
-    - git clone  https://github.com/vjr2817/CSV-Uploader.git
-    - cd CSV-Uploader/server
+    - git clone  https://github.com/vjr2817/csv-Uploader.git
+    - cd csv-Uploader/server
     - composer install
     - php -S 127.0.0.1:8000 -t public/
   ```
