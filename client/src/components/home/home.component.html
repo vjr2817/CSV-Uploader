@@ -1,0 +1,62 @@
+<input
+  type="file"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  #fileUpload
+/>
+
+<div class="align-center">
+  <div><h3 class="">File Upload</h3></div>
+  <ng-container *ngIf="showError">
+    <h3 class="color-red">{{ errorMsg }}</h3>
+  </ng-container>
+
+  <div class="file-upload">
+    <h4>{{ fileName || "No file uploaded yet." }}</h4>
+    <div class="flex-inline">
+      <button
+        mat-fab
+        extended
+        color="primary mr-20"
+        (click)="fileUpload.click()"
+        [disabled]="loader"
+      >
+        <mat-icon>attach_file</mat-icon>
+        Upload File
+      </button>
+      <ng-container *ngIf="loader">
+        <mat-spinner class="" [diameter]="30"> </mat-spinner>
+      </ng-container>
+    </div>
+  </div>
+  <div class="">
+    <ng-container *ngIf="tableData?.filteredData">
+      <div class="margin-4">
+        <mat-form-field class="min-width-20">
+          <mat-label>Filter</mat-label>
+          <input
+            matInput
+            (keyup)="applyFilter($event)"
+            placeholder="Accounts"
+            #input
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <table mat-table [dataSource]="tableData" matSort class="">
+          <ng-container *ngFor="let header of headers">
+            <ng-container [matColumnDef]="header">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                {{ header }}
+              </th>
+              <td mat-cell *matCellDef="let element">{{ element[header] }}</td>
+            </ng-container>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="headers"></tr>
+          <tr mat-row *matRowDef="let row; columns: headers"></tr>
+        </table>
+        <h4 *ngIf="tableData?.filteredData?.length == 0">No Recors Found</h4>
+      </div>
+    </ng-container>
+  </div>
+</div>

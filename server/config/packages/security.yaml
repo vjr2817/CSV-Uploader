@@ -1,0 +1,17 @@
+# config/packages/security.yaml
+security:
+    providers:
+        backend_users:
+            memory:
+                users:
+                    admin: {}
+    firewalls:
+        open_api:
+            pattern: ^/api/login
+            security: false
+
+        secured_api:
+          
+            provider: backend_users
+            custom_authenticator: App\Security\ApiKeyAuthenticator
+            

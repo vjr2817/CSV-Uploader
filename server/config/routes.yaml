@@ -1,0 +1,18 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+api_login:
+    path: /api/login
+    controller: App\Controller\LoginController::login
+    methods: ['POST']
+
+post_csv_file:
+    path: /api/post-csv-file
+    controller: App\Controller\DataController::postCSVFile
+    methods: ['POST']
+
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation

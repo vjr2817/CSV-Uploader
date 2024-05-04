@@ -1,0 +1,26 @@
+services:
+  client:
+        image: client
+        build: ./client
+        container_name: client
+
+        expose:
+          - 4200
+        ports:
+           - 4200:4200
+        environment:
+          - apiUrl = http://localhost:4200/api
+
+  server:
+        image: server
+        build: ./server
+        container_name: server
+        
+        env_file:
+          - server/.env
+
+        expose:
+          - 8000
+        ports:
+          - "8000:8000"
+          
