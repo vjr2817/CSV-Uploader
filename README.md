@@ -6,7 +6,7 @@ To setup on local:
 - Run using Docker **(Docker setup required https://docs.docker.com/desktop/)**
 - Running Client and Server Applications
 
-**To run bby using Docker:**
+**To run by using Docker:**
 
 Requirements:
 
@@ -21,9 +21,7 @@ Requirements:
     - cd CSV-Uploader/
     - docker compose up
   ```
-
-
-
+</br>
 
 **To run by setting up client and server:**
 
@@ -44,6 +42,7 @@ Requirements:
     - ng serve
   ```
 App will be running on http://localhost:4200 (**use admin & admin as username and password**)
+
 
 Steps to run Symfony PHP app:
 
