@@ -17,7 +17,7 @@ Requirements:
   Steps to run using Docker setup:
 
   ```
-    - git clone  https://github.com/vjr2817/CSV-Uploader.git
+    - git clone  https://github.com/vjr2817/csv-Uploader.git
     - cd CSV-Uploader/
     - docker compose up
   ```
