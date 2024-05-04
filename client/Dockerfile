@@ -10,4 +10,4 @@ COPY . /app/client/
 
 RUN npm install --legacy-peer-deps
 
-CMD ng serve --proxy-config src/proxy.conf.json --host=0.0.0.0
+CMD ng serve --proxy-config src/proxy.conf.json --host=0.0.0.0 --configuration=docker
