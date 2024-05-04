@@ -18,7 +18,7 @@ Requirements:
 
   ```
     - git clone  https://github.com/vjr2817/csv-uploader.git
-    - cd CSV-Uploader/
+    - cd csv-uploader/
     - docker compose up
   ```
 </br>
