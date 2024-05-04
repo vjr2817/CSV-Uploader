@@ -54,7 +54,9 @@ Steps to run Symfony PHP app:
     - php -S 127.0.0.1:8000 -t public/
   ```
 
-App will be running on http://localhost:8000 (**use admin & admin as username and password**)
+App will be running on http://localhost:8000 
+
+(**use admin & admin as username and password**)
 
 ![Login Page of Client App](https://github.com/vjr2817/CSV-Uploader/assets/135838955/a071e6c5-0ab9-433e-8f9d-a89ea7e4743d)
 
