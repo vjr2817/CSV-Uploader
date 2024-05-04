@@ -6,7 +6,7 @@ To setup on local:
 - Run using Docker **Docker stup required**
 - Running Client and Server Applications
 
-**To install using Docker:**
+**To run bby using Docker:**
 
 Requirements:
 
@@ -21,6 +21,11 @@ Requirements:
     - cd CSV-Uploader/
     - docker compose up
   ```
+
+
+
+
+**To run by setting up client and server:**
 
 Requirements:
 
