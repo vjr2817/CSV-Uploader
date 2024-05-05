@@ -44,8 +44,9 @@ class ApiKeyAuthenticator extends AbstractAuthenticator
             throw new CustomUserMessageAuthenticationException('No API token provided');
         }
 
-        // implement your own logic to get the user identifier from `$apiToken`
-        // e.g. by looking up a user in the database using its API key
+        /**
+         * Validating JWT Token using AuthService.
+         */
         $authService = new AuthService();
         $decode_data = $authService->decodeJWTToken($apiToken);
         $userIdentifier = $decode_data['username'];

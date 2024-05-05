@@ -10,10 +10,6 @@ export const authGuard = () => {
       return true;
     }
     // Redirect to the login page
-    return router.navigate(['/login'],{
-        state: {
-            'message': 'Authentication Failure, Login Required.'
-        }
-    });
+    return router.navigate(['/login'],{});
   };
   

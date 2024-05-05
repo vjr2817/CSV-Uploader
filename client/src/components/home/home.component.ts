@@ -45,6 +45,9 @@ export class HomeComponent {
 
     @ViewChild(MatSort) sort: MatSort = new MatSort();
 
+    /**
+     *  On file select making API call and fecthing data.
+     */
     onFileSelected(event: any) {
         if(event.target.files && event.target.files.length > 0){
             const file = event.target.files[0];
@@ -56,7 +59,7 @@ export class HomeComponent {
                     .subscribe({
                         next: (resData: any) => {
                             this.loader = false;
-                            if (resData.data && resData.data.length > 0) {
+                            if (resData?.data?.length > 0) {
                                 this.fileName = file.name;
                                 let csvData = this.convertCSVtoTableData(resData.data);
                                 this.headers = csvData.headers;
@@ -84,6 +87,9 @@ export class HomeComponent {
         setTimeout(() => this.showError = false, 4000);
     }
 
+    /**
+     *  Converting CSV data to table format data 
+     */
     convertCSVtoTableData(data: Array<any>): any {
         let headers = data.shift();
         let tableData = [];

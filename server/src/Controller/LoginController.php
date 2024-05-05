@@ -17,8 +17,14 @@ class LoginController extends AbstractController
     public function login(Request $request, AuthService $authService): JsonResponse
     {
      
-        $data =  $request->toArray(); 
-        if($data && array_key_exists('username',$data) && $data['username'] === $_ENV['Login_Username']){           
+        $data =  $request->toArray();
+        /**
+         *  For now - login  for admin user is enabled.
+         */ 
+        if($data && array_key_exists('username',$data) && $data['username'] === $_ENV['Login_Username']){   
+            /**
+             * Verfing Password using Auth Service. 
+             */        
             if($data && array_key_exists('password',$data) && $authService->verifyPassword($data['password'])){
                 $token = $authService->generateJWTToken($data['username']);
                 return new JsonResponse(['token'=>$token,'status'=>'success'], Response::HTTP_OK);

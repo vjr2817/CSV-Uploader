@@ -2,11 +2,13 @@ controllers:
     resource: ../src/Controller/
     type: annotation
 
+# Login API
 api_login:
     path: /api/login
     controller: App\Controller\LoginController::login
     methods: ['POST']
 
+# CSV File upload API
 post_csv_file:
     path: /api/post-csv-file
     controller: App\Controller\DataController::postCSVFile

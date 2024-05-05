@@ -20,8 +20,15 @@ class DataController extends AbstractController
     {
         $res_data = ['status'=>'failure','message'=>'Invalid File Request'];
         $uploaded_file = $request->files->get('csvDocument');
+
+        /**
+         * Check File size and file is valid
+         */
         if($uploaded_file && $uploaded_file->isValid()){
             if($uploaded_file->getSize() <= self::max_file_size){
+                /**
+                 * Check file type 
+                 */
                 $file_type =  $uploaded_file->getClientOriginalExtension();
                 if($file_type === 'csv'){
                     $data_contents = $this->getCSVDataArray($uploaded_file);
@@ -37,6 +44,9 @@ class DataController extends AbstractController
      
     }
 
+    /**
+     * Converting CSV file to Array data
+     */
     public function getCSVDataArray($uploaded_file){
         $file_contents = $uploaded_file->getContent();
         $lines = explode(PHP_EOL, $file_contents);

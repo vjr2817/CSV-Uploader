@@ -15,7 +15,8 @@ import { AuthService } from "../../auth/services/auth.service";
 @Component({
     selector: 'app-login',
     standalone: true,
-    imports: [CommonModule,
+    imports: [
+        CommonModule,
         FormsModule,
         MatFormFieldModule,
         MatInputModule,
@@ -42,6 +43,9 @@ export class LoginComponent {
             this.router.navigateByUrl('/login');
         }
     }
+    /**
+     *   Making API call and getting the token in response. 
+     */
     onSubmit() {
         const { username, password } = this.loginObj.value;
         this.loader = true;

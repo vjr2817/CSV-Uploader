@@ -12,6 +12,9 @@ use UnexpectedValueException;
 use DomainException;
 
 class AuthService{
+    /**
+     * Password hasing method 
+     */
     public function getHashedPassword($password){
         $factory = new PasswordHasherFactory([
             'common' => ['algorithm' => 'bcrypt']
@@ -20,6 +23,9 @@ class AuthService{
         $hash = $hasher->hash($password);
         return $hash;
     }
+    /**
+     * Password verification method 
+     */
     public function verifyPassword($password){
         $factory = new PasswordHasherFactory([
             'common' => ['algorithm' => 'bcrypt']
@@ -29,6 +35,9 @@ class AuthService{
         return $verifyFlag;
     }
 
+    /**
+     * Generating JWT token with payloadd data to be shared with client
+     */
     public function generateJWTToken($username){
         $key = $_ENV['JWT_Key'];
         $payload = [
@@ -38,6 +47,10 @@ class AuthService{
         $jwt = JWT::encode($payload, $key, 'HS256');
         return $jwt;
     }
+
+    /**
+     *  Decoding JWT Token and fetching payload data 
+     */
 
     public function decodeJWTToken($jwt){
         $key = $_ENV['JWT_Key'];
